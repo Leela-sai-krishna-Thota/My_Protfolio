@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leela sai krishna Thota | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">Leela sai krishna Thota  </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+      </nav>
+      
+
+  <!-- ===== Home Section ===== -->
+  <section class="home" id="home">
+    <section class="home fade-in" id="home">...</section>
+    <section class="home fade-in" id="home">
+        <img src="profile.jpg" alt="Leela's Photo" class="profile-pic" />
+        <h1>Hi, I'm Leela 👋</h1>
+        <h2>I am <span class="typed-text"></span><span class="cursor">|</span></h2>
+        <p>I love Web Dev, AI, Cybersecurity, and Data Science.</p>
+      </section>
+      
+    
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="about" id="about">
+    <section class="about fade-in" id="about">...</section>
+
+    <h2>About Me</h2>
+    <p>I'm a passionate techie who enjoys building cool stuff and learning new things. Currently working on projects at Build Club and preparing for GATE 2026.</p>
+  </section>
+
+  <!-- ===== Skills Section ===== -->
+  <section class="skills" id="skills">
+    <section class="skill fade-in" id="skill">...</section>
+
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Node.js, MongoDB (basics)</li>
+      <li>Python, AI/ML basics</li>
+      <li>Cybersecurity fundamentals</li>
+    </ul>
+  </section>
+<link rel="stylesheet" href="style.css">
+  <!-- ===== Projects Section ===== -->
+  <section class="projects" id="projects">
+    <section class="projects fade-in" id="projects">...</section>
+
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Feedback System</h3>
+      <p>Built at CoderOne using Node.js. Collects and manages user feedback.</p>
+    </div>
+    <div class="project">
+      <h3>Travel Blog Site</h3>
+      <p>Simple blog platform made with Node.js and MongoDB to post and delete travel blogs.</p>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact" id="contact">
+    <section class="contact fade-in" id="contact">...</section>
+
+    <h2>Contact Me</h2>
+    <p>contact: +917013875338</p>
+    <p>Email: thotaleelasaikrishna@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/Leela-sai-krishna-Thota" target="_blank">github_Profile</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/thota-leela-sai-krishna-8003a6292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin_Profile</a></p>
+    <p>
+        <a href="Leela_Resume.pdf" download class="btn">📄 Download My Resume</a>
+      </p>
+      
+  </section>
+  <button id="scrollTopBtn" title="Go to top">⬆️</button>
+  <div class="skill">
+    <label>HTML</label>
+    <div class="progress-bar"><div style="width: 90%"></div></div>
+  </div>
+  
+</body>
+<script>
+    const sections = document.querySelectorAll(".fade-in");
+  
+    const reveal = () => {
+      sections.forEach((sec) => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          sec.classList.add("visible");
+        }
+      });
+    };
+  
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+  </script>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+  
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+  
+      // Change icon based on mode
+      toggleBtn.textContent = body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    });
+  
+    // Default mode
+    window.onload = () => {
+      body.classList.add('dark-mode'); // or light-mode
+      toggleBtn.textContent = '🌙';
+    };
+  </script>
+
+<script>
+    const typedText = document.querySelector(".typed-text");
+    const words = ["a Web Developer", "a Student", "an AI Enthusiast", "a Coder"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typingDelay = 100;
+    let erasingDelay = 50;
+    let newWordDelay = 1500;
+  
+    function type() {
+      if (charIndex < words[wordIndex].length) {
+        typedText.textContent += words[wordIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        setTimeout(erase, newWordDelay);
+      }
+    }
+  
+    function erase() {
+      if (charIndex > 0) {
+        typedText.textContent = words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        wordIndex++;
+        if (wordIndex >= words.length) wordIndex = 0;
+        setTimeout(type, typingDelay);
+      }
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      if (words.length) setTimeout(type, newWordDelay);
+    });
+  </script>
+  
+  <script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+  
+  
+</html>
+
