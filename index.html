@@ -10,14 +10,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="dotsCanvas"></canvas>
+
+
+  </nav>
+  
     <nav class="navbar">
-        <div class="nav-logo">Leela sai krishna Thota  </div>
+       <h2> <div class=" neon-text">Leela sai krishna Thota  </div></h2>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <a href="#home" class="neon-nav-btn">Home</a>
+          <a href="#about" class="neon-nav-btn">About</a>
+          <a href="#skills" class="neon-nav-btn">skills</a>
+          <a href="#projects" class="neon-nav-btn">Projects</a>
+          <a href="#contact" class="neon-nav-btn">Contact</a>
         </ul>
         <button id="theme-toggle" class="theme-toggle">🌙</button>
 
@@ -25,24 +30,30 @@
       
 
   <!-- ===== Home Section ===== -->
-  <section class="home" id="home">
-    <section class="home fade-in" id="home">...</section>
+  
     <section class="home fade-in" id="home">
-        <img src="profile.jpg" alt="Leela's Photo" class="profile-pic" />
-        <h1>Hi, I'm Leela 👋</h1>
-        <h2>I am <span class="typed-text"></span><span class="cursor">|</span></h2>
-        <p>I love Web Dev, AI, Cybersecurity, and Data Science.</p>
+      <img src="profile2.jpg" class="profile-pic" alt="Leela's Photo">
+
+        <h1 class="neon-text">Welcome to My Portfolio</h1>
+        <button class="neon-button">Hire Me</button>
+
+        <h1 class="fade-in">Hi, I’m Leela 👋</h1>
+
+        <h2 class="neon-text"> I am <span class="typed-text"></span><span class="cursor"></span></h2>
       </section>
       
     
-  </section>
 
   <!-- ===== About Section ===== -->
-  <section class="about" id="about">
-    <section class="about fade-in" id="about">...</section>
-
+  <section id="about" style="background-color: rgba(0, 0, 0, 0.4);">
+    <!-- your content -->
+  
     <h2>About Me</h2>
-    <p>I'm a passionate techie who enjoys building cool stuff and learning new things. Currently working on projects at Build Club and preparing for GATE 2026.</p>
+    <p>Passionate and motivated Computer Science Engineering student at Vishnu Institute of Technology with a strong
+      foundation in web development.Actively involved in Build Club, enhancing practical skills through collaborative projects
+      and handson
+      experience.Seeking opportunities to apply knowledge and contribute effectively to realworld
+      projects.Like to do TeamWork and also collaborate with like minded people.</p>
   </section>
 
   <!-- ===== Skills Section ===== -->
@@ -51,41 +62,45 @@
 
     <h2>Skills</h2>
     <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>Node.js, MongoDB (basics)</li>
-      <li>Python, AI/ML basics</li>
-      <li>Cybersecurity fundamentals</li>
+      <li><strong>Languages:</strong> C, Python, Java <br>
+      <li><strong> Technical Skills:</strong>Basics of DSA and DBMS.</li>
+      <li><strong>Technologies:</strong>Frontend (HTML, CSS, JavaScript.)</li>
     </ul>
   </section>
 <link rel="stylesheet" href="style.css">
   <!-- ===== Projects Section ===== -->
+  
+  
   <section class="projects" id="projects">
-    <section class="projects fade-in" id="projects">...</section>
 
-    <h2>Projects</h2>
+    <h2>Projects and Experience</h2>
+  </div>
+  <div class="project">
+    <h3>Web Development</h3>
+    <p>Telegram ChatBot with Firestore Database connection.</p>   
+   </div>
     <div class="project">
-      <h3>Feedback System</h3>
-      <p>Built at CoderOne using Node.js. Collects and manages user feedback.</p>
-    </div>
-    <div class="project">
-      <h3>Travel Blog Site</h3>
-      <p>Simple blog platform made with Node.js and MongoDB to post and delete travel blogs.</p>
-    </div>
+      <h3>Experiences</h3>
+<p><strong>Internship:</strong> Web Development Intern at CoderOne.<br>
+ <strong> GDG Hackathon: </strong>Volunteering Experience.</p>   
   </section>
 
   <!-- ===== Contact Section ===== -->
   <section class="contact" id="contact">
-    <section class="contact fade-in" id="contact">...</section>
-
     <h2>Contact Me</h2>
     <p>contact: +917013875338</p>
     <p>Email: thotaleelasaikrishna@gmail.com</p>
     <p>GitHub: <a href="https://github.com/Leela-sai-krishna-Thota" target="_blank">github_Profile</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/thota-leela-sai-krishna-8003a6292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin_Profile</a></p>
     <p>
-        <a href="Leela_Resume.pdf" download class="btn">📄 Download My Resume</a>
-      </p>
-      
+      <a href="Leela_Resume.pdf" download class="btn">📄 Download My Resume</a>
+    </p>
+  </section>
+  <section id="contact" style="background-color: rgba(0, 0, 0, 0.5);">
+    <!-- Contact content here -->
+  </section>
+  
+  
   </section>
   <button id="scrollTopBtn" title="Go to top">⬆️</button>
   <div class="skill">
@@ -128,6 +143,53 @@
       toggleBtn.textContent = '🌙';
     };
   </script>
+  <script>
+    const canvas = document.getElementById("dotsCanvas");
+    const ctx = canvas.getContext("2d");
+  
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  
+    const particles = [];
+    const total = 100;
+  
+    for (let i = 0; i < total; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+      });
+    }
+  
+    function animateDots() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#00ffff";
+        ctx.fill();
+  
+        p.x += p.dx;
+        p.y += p.dy;
+  
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      }
+  
+      requestAnimationFrame(animateDots);
+    }
+  
+    animateDots();
+  
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+  
 
 <script>
     const typedText = document.querySelector(".typed-text");
